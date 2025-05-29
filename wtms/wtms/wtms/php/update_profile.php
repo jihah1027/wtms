@@ -1,14 +1,14 @@
 <?php
-include_once("dbconnect.php"); 
+include_once("dbconnect.php"); // make sure this connects to your DB
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $id = $_POST['worker_id'];
+    $id = $_POST['id'];
     $full_name = $_POST['full_name'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
     $address = $_POST['address'];
 
-    $sql = "UPDATE `tbl_users` SET `full_name` = ?, `email` = ?, `phone` = ?, `address` = ? WHERE worker_id = ?";
+    $sql = "UPDATE `tbl_users` SET `full_name` = ?, `email` = ?, `phone` = ?, `address` = ? WHERE id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ssssi", $full_name, $email, $phone, $address, $id);
 

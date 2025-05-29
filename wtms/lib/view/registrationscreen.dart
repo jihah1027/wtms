@@ -70,7 +70,7 @@ Widget build(BuildContext context) {
                       ),
                     ),
                     const SizedBox(height: 12),
-                    TextField( 
+                    TextField(
                       controller: nameController,
                       decoration: const InputDecoration(
                         labelText: "Your Name",

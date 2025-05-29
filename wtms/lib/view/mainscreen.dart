@@ -3,7 +3,6 @@ import 'package:wtms/model/user.dart';
 import 'package:wtms/view/loginscreen.dart';
 import 'package:wtms/view/registrationscreen.dart';
 import 'package:wtms/view/profilescreen.dart';
-import 'package:wtms/view/tasklistscreen.dart';
 
 class MainScreen extends StatefulWidget {
   final User user;
@@ -69,17 +68,16 @@ class _MainScreenState extends State<MainScreen> {
               MaterialPageRoute(builder: (context) => const RegisterScreen()),
             );
           } else {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => TaskListScreen(user: widget.user)),
-            );
+            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+              content: Text("Add new product screen later"),
+            ));
           }
         },
         backgroundColor: Color(0xFF2193b0),
         child: const Icon(
-          Icons.task_alt,
+          Icons.navigate_next,
           color: Colors.white,
-        ),
+          ), 
       ),
     );
   }

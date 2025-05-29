@@ -147,7 +147,7 @@ Widget build(BuildContext context) {
     "Content-Type": "application/x-www-form-urlencoded", // Tells PHP this is a real POST
   },
     body: {
-      "worker_id": widget.user.userId ?? "",
+      "id": widget.user.userId ?? "",
       "full_name": fullName,
       "email": email,
       "phone": phone,
